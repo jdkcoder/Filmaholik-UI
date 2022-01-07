@@ -1,4 +1,19 @@
-$body-bg: hsla(0,0%,0%,1);
+$body-bg-clr: hsla(0,0%,8%,1);
+$body-text-clr: hsla(0,0%,100%,1);
 
+/* MOBILE NAV */
+//Background
+$mobile-nav-bg: rgb(36, 36, 36);
+
+//Font-size
 $mobile-nav-fs: clamp(.75rem, 2vw, 2.5rem);
-$icon-nav-fs: clamp(.75rem, 2vw, 2.5rem);
+
+//Font-color
+$mobile-nav-fc: hsla(0,0%,50%,1);
+$mobile-nav-fc-2: hsla(0,0%,100%,1);
+
+//SVG size
+$mobile-nav-svg-size: clamp(1.5rem, 4vw, 6.25rem);
+
+//Space between
+$mobile-nav-x-space: clamp(1.5rem, 4vw, 6.25rem);

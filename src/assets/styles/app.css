@@ -53,10 +53,11 @@ picture {
 }
 
 /* MOBILE NAV */
+/* MOBILE NAV */
 div.m-nav {
   position: fixed;
   bottom: 0;
-  background: #000;
+  background: #242424;
   width: 100vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -70,12 +71,21 @@ div.m-nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5rem;
+  padding: 1.25rem 1rem 1rem 1rem;
 }
 
 div.m-nav a {
   text-decoration: none;
-  color: #fff;
+  color: gray;
+}
+
+div.m-nav a:hover {
+  color: white;
+  transtion: .4s;
+}
+
+div.m-nav > * + * {
+  margin-left: clamp(1.5rem, 4vw, 6.25rem);
 }
 
 div.m-nav .item {
@@ -85,21 +95,51 @@ div.m-nav .item {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  margin-left: 1.5rem;
   font-size: clamp(0.75rem, 2vw, 2.5rem);
+  text-align: center;
 }
 
-div.m-nav .item * + * {
-  margin-top: .5rem;
+div.m-nav .item > * + * {
+  margin-top: 0.5rem;
+}
+
+div.m-nav .item.router-link-exact-active {
+  color: white !important;
+  transtion: .4s;
+}
+
+div.m-nav .item.more {
+  display: none;
 }
 
 div.m-nav .item svg {
-  height: clamp(1rem, 50vw, 3rem);
-  width: clamp(1rem, 50vw, 3rem);
+  height: clamp(1.5rem, 4vw, 6.25rem);
+  width: clamp(1.5rem, 4vw, 6.25rem);
 }
 
+@media (min-width: 768px) {
+  .more {
+    display: -ms-grid !important;
+    display: grid !important;
+  }
+  div.m-nav > * + * {
+    margin-left: clamp(1.5rem, 10vw, 6.25rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  div.m-nav {
+    display: none;
+  }
+}
+
+/* END MOBILE NAV */
+/* DESKTOP NAV */
+/* END DESKTOP NAV */
 body {
   font-family: 'Nunito', sans-serif;
+  background: #141414;
+  color: white;
 }
 
 /* HOME */

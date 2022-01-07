@@ -1,33 +1,68 @@
 /* MOBILE NAV */
 div.m-nav {
-    position: fixed;
-    bottom:0;
-    background: #000;
-    width:100vw;
-    height:fit-content;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
+  position: fixed;
+  bottom: 0;
+  background: $mobile-nav-bg;
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1rem 1rem 1rem;
 
-    a {     
+  a {
     text-decoration: none;
-    color:#fff;
+    color: $mobile-nav-fc;
+
+    &:hover {
+      color: $mobile-nav-fc-2;
+      transtion: .4s;
+    }
+  }
+  & > * + * {
+    margin-left: $mobile-nav-x-space;
+  }
+  .item {
+    display: grid;
+    place-items: center;
+    width: max-content;
+    font-size: $mobile-nav-fs;
+    text-align: center;
+
+    & > * + * {
+      margin-top: 0.5rem;
     }
 
-    .item {
-        display:grid;
-        place-items: center;
-        width:max-content;
-        margin-left:1.5rem;
-        font-size: $mobile-nav-fs;
-
-       * + * {
-           margin-top:.5rem;
-       }
-       svg {
-           height: clamp(1rem, 50vw, 3rem);
-           width: clamp(1rem, 50vw, 3rem);
-       }
+    &.router-link-exact-active {
+      color: $mobile-nav-fc-2 !important;
+      transtion:.4s;
     }
+    &.more {
+      display: none;
+    }
+    svg {
+      height: $mobile-nav-svg-size;
+      width: $mobile-nav-svg-size;
+    }
+  }
 }
+@media (min-width: 768px) {
+  .more {
+    display: grid !important;
+  }
+  div.m-nav > * + * {
+    margin-left: clamp(1.5rem, 10vw, 6.25rem);
+  }
+}
+@media (min-width: 1280px) {
+  div.m-nav {
+    display: none;
+  }
+}
+/* END MOBILE NAV */
+
+
+/* DESKTOP NAV */
+
+
+/* END DESKTOP NAV */
