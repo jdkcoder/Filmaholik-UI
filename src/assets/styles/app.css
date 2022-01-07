@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* MOBILE NAV */
+div.m-nav {
+  position: fixed;
+  bottom: 0;
+  background: #000;
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5rem;
+}
+
+div.m-nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+div.m-nav .item {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 1.5rem;
+  font-size: clamp(0.75rem, 2vw, 2.5rem);
+}
+
+div.m-nav .item * + * {
+  margin-top: .5rem;
+}
+
+div.m-nav .item svg {
+  height: clamp(1rem, 50vw, 3rem);
+  width: clamp(1rem, 50vw, 3rem);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* HOME */
+/* USER SECTIONS */
+/* MOVIE SECTIONS */
+/*# sourceMappingURL=app.css.map */
