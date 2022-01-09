@@ -9,11 +9,18 @@ $mobile-nav-bg: rgb(36, 36, 36);
 $mobile-nav-fs: clamp(.75rem, 2vw, 2.5rem);
 
 //Font-color
-$mobile-nav-fc: hsla(0,0%,50%,1);
-$mobile-nav-fc-2: hsla(0,0%,100%,1);
+$mobile-nav-fc: hsla(0,0%,70%,1);
+$mobile-nav-fc-2: hsla(0,0%,90%,1);
 
 //SVG size
 $mobile-nav-svg-size: clamp(1.5rem, 4vw, 6.25rem);
 
 //Space between
 $mobile-nav-x-space: clamp(1.5rem, 4vw, 6.25rem);
+/* END MOBILE NAV */
+
+/* DESKTOP NAV */
+//Font-color
+$desktop-nav-fc-2: hsla(0,0%,70%,1);
+$desktop-nav-fc: hsla(0,0%,90%,1);
+/* END DESKTOP NAV */

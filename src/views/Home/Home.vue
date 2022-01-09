@@ -1,6 +1,10 @@
 
+<script setup>
+import heroCarousel from './heroCarousel.vue';
+</script>
 <template>
-<div>This is Home</div>
+<heroCarousel />
+<!-- <filmSlides /> -->
 </template>
 
 <script>

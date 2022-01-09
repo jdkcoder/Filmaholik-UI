@@ -25,10 +25,17 @@ select,
 textarea {
   font: inherit;
 }
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
 img,
 picture {
   display: block;
   max-width: 100%;
+  border: none;
 }
 /* remove animation for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
