@@ -105,6 +105,7 @@ div.m-nav {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: 2;
 }
 
 div.m-nav a {
@@ -983,7 +984,7 @@ section.hero-banner .blocks .btn-m .info-m svg {
 }
 
 div.latest > * + * {
-  margin-top: 1rem !important;
+  margin-top: 0.25rem;
 }
 
 div.latest:hover > .title > .view-all {
@@ -1000,6 +1001,7 @@ div.latest .title {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  margin-left: .75rem;
 }
 
 div.latest .title > * {
@@ -1028,13 +1030,11 @@ div.latest .title:hover > .view-all > p > svg {
 }
 
 div.latest .title h2 {
-  font-size: 1.4vw;
+  font-size: 1.125rem;
 }
 
 div.latest .title .view-all {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -1081,7 +1081,7 @@ div.latest .title .view-all p svg {
 }
 
 div.latest .swiper {
-  width: 100vw;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1091,7 +1091,9 @@ div.latest .swiper {
 
 div.latest .swiper .swiper-button-prev,
 div.latest .swiper .swiper-button-next {
-  padding: 0 1.75rem;
+  margin-top: unset !important;
+  width: unset;
+  padding: 0 1vw;
   top: 0 !important;
   height: 100% !important;
   background: rgba(20, 20, 20, 0.5);
@@ -1117,14 +1119,12 @@ div.latest .swiper .swiper-button-next:hover::after {
 
 div.latest .swiper .swiper-button-next {
   right: 0;
-  -webkit-transform: translateY(3vw);
-          transform: translateY(3vw);
+  left: unset;
 }
 
 div.latest .swiper .swiper-button-prev {
   left: 0;
-  -webkit-transform: translateX(-4.9vw);
-          transform: translateX(-4.9vw);
+  right: unset;
 }
 
 div.latest .swiper .swiper-button-prev.swiper-button-disabled,
@@ -1132,10 +1132,19 @@ div.latest .swiper .swiper-button-next.swiper-button-disabled {
   display: none;
 }
 
+div.latest .swiper .swiper-wrapper {
+  padding-left: .75rem;
+}
+
+div.latest .swiper .swiper-wrapper > * + * {
+  margin-left: 0.25rem;
+}
+
 div.latest .swiper-slide {
   text-align: center;
   font-size: 18px;
-  height: 9vw;
+  width: 200px;
+  height: 90px;
   border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1149,6 +1158,7 @@ div.latest .swiper-slide {
   transition: -webkit-transform 0.05s;
   transition: transform 0.05s;
   transition: transform 0.05s, -webkit-transform 0.05s;
+  margin-right: 0 !important;
 }
 
 div.latest .swiper-slide:hover {

@@ -12,21 +12,20 @@ import TrianglePlayIcon from "../../assets/img/play-this.svg";
         </div>
       </div>
       <swiper
-        :slidesPerView="5"
+        :slidesPerView="'auto'"
         :spaceBetween="10"
-        :slidesPerGroup="5"
+        :freeMode="true"
         :pagination="{
           clickable: true,
         }"
         :navigation="true"
-        class="mySwiper"
       >
         <swiper-slide>
           <img class="movie-thumb" src="https://i.imgur.com/2kYvx0N.png" />
           <div class="hover-el">
-              <div class="tl-corner">
-                <a class="play-this"><TrianglePlayIcon /></a>
-              </div>
+            <div class="tl-corner">
+              <a class="play-this"><TrianglePlayIcon /></a>
+            </div>
             <div class="bl-corner">
               <img src="https://i.imgur.com/gfin6Rz.png" class="title" />
               <div class="short-info">
@@ -71,10 +70,10 @@ import TrianglePlayIcon from "../../assets/img/play-this.svg";
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, { Navigation, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, FreeMode]);
 export default {
   components: {
     Swiper,
@@ -88,20 +87,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
 section.slides {
-  padding: 3rem 2rem;
-
-}
-@media (min-width: 1280px) {
-section.slides {
-  height:100vh;
-  width:100vw;
-  padding-top: 4rem;
-  & > * {
-    margin-left: 4rem;
-  }
-}
+  height: 100vh;
+  width: 100vw;
+  padding-top: 2rem;
 }
 </style>
 

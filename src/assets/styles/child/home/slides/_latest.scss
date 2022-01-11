@@ -1,6 +1,6 @@
 div.latest {
   & > * + * {
-    margin-top: 1rem !important;
+    margin-top: 0.25rem;
   }
   &:hover {
     & > .title > .view-all {
@@ -13,6 +13,7 @@ div.latest {
     display: flex;
     font-weight: 700;
     width: max-content;
+    margin-left:.75rem;
 
     & > * {
       align-self: center;
@@ -35,10 +36,11 @@ div.latest {
       }
     }
     h2 {
-      font-size: 1.4vw;
+      font-size: 1.125rem;
     }
     .view-all {
-      display: flex;
+      // display: flex;
+      display: none;
       flex-direction: row;
       height: max-content;
       transition: 0.4s ease-in-out;
@@ -72,14 +74,16 @@ div.latest {
   }
 
   .swiper {
-    width: 100vw;
+    width: 100%;
     height: fit-content;
     margin-bottom: 10rem;
-    overflow:unset;
+    overflow: unset;
 
     .swiper-button-prev,
     .swiper-button-next {
-      padding: 0 1.75rem;
+      margin-top: unset !important;
+      width: unset;
+      padding: 0 1vw;
       top: 0 !important;
       height: 100% !important;
       background: rgba(20, 20, 20, 0.5);
@@ -101,27 +105,36 @@ div.latest {
     }
     .swiper-button-next {
       right: 0;
-      transform: translateY(3vw);
+      left: unset;
     }
     .swiper-button-prev {
       left: 0;
-      transform:translateX(-4.9vw);
+      right: unset;
     }
     .swiper-button-prev.swiper-button-disabled,
     .swiper-button-next.swiper-button-disabled {
       display: none;
+    }
+
+    .swiper-wrapper {
+      padding-left:.75rem;
+      & > * + * {
+        margin-left: 0.25rem;
+      }
     }
   }
 
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    height: 9vw;
+    width: 200px;
+    height: 90px;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     position: relative;
     transition: transform 0.05s;
+    margin-right: 0 !important;
 
     &:hover {
       -webkit-transform: scale(1.6);
