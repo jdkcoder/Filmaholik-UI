@@ -5,15 +5,18 @@ body {
   font-family: "Nunito", sans-serif;
   background: $body-bg-clr;
   color: $body-text-clr;
+  overflow-x:hidden;
 }
 
-
-
+::-webkit-scrollbar {
+  display:none
+}
 @import "./child/menus";
 
 
 /* HOME */
-@import "./child/heroCarousel";
+@import "./child/home/heroCarousel";
+@import './child/home/slides/latest';
 /* USER SECTIONS */
 
 /* MOVIE SECTIONS */
