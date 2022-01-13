@@ -1391,7 +1391,7 @@ div.title .view-all {
     font-size: 2rem;
   }
   div.latest .swiper .swiper-wrapper {
-    padding-left: 3rem;
+    margin-left: 2rem;
   }
   div.latest .swiper .swiper-wrapper > * + * {
     margin-left: 1rem;
