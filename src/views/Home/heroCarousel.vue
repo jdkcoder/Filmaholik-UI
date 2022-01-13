@@ -61,7 +61,7 @@ import InfoIcon from "../../assets/img/info.svg";
           <img src="https://i.imgur.com/rlGJ4h8.png" alt="" />
         </a>
         <img
-          src="https://img.youtube.com/vi/wPosLpgMtTY/maxresdefault.jpg"
+          src="https://i.imgur.com/5HvWl2I.png"
           class="trailer-thumb"
         />
       </div>

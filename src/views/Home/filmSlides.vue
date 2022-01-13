@@ -1,6 +1,8 @@
 <script setup>
 import SingleArrowRight from "../../assets/img/single-arrow-right.svg";
 import TrianglePlayIcon from "../../assets/img/play-this.svg";
+import HeartIcon from "../../assets/img/heart.svg";
+import InfoIcon from "../../assets/img/info.svg";
 </script>
 <template>
   <section class="slides">
@@ -25,6 +27,10 @@ import TrianglePlayIcon from "../../assets/img/play-this.svg";
           <div class="hover-el">
             <div class="tl-corner">
               <a class="play-this"><TrianglePlayIcon /></a>
+            </div>
+            <div class="tr-corner">
+              <a class="play-this"><InfoIcon /></a>
+              <a class="favour-this"><HeartIcon/></a>
             </div>
             <div class="bl-corner">
               <img src="https://i.imgur.com/gfin6Rz.png" class="title" />
