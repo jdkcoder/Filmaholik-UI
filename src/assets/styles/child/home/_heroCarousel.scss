@@ -51,6 +51,7 @@ section.hero-banner {
         font-weight: 600;
         letter-spacing: 1.5px;
         word-spacing: -1px;
+        margin-left:unset;
       }
       &.trailer {
         visibility: hidden;
@@ -249,7 +250,7 @@ section.hero-banner {
         &.genres {
           visibility: visible;
           width: max-content;
-          font-size: 1.25rem !important;
+          font-size: 1rem !important;
           padding: 0 1rem !important;
           span {
             letter-spacing: 3px;
@@ -364,7 +365,7 @@ section.hero-banner {
           width: 70%;
           padding: 0 1rem 0 1.5rem;
           color: #ccc;
-          font-size: 1rem;
+          font-size: .85rem;
           white-space: normal;
 
           span {

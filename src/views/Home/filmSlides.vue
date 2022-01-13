@@ -16,7 +16,7 @@ import InfoIcon from "../../assets/img/info.svg";
       <swiper
         :slidesPerView="'auto'"
         :spaceBetween="10"
-        :freeMode="true"
+        :freeMode="false"
         :pagination="{
           clickable: true,
         }"
