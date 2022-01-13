@@ -29,7 +29,7 @@ import InfoIcon from "../../assets/img/info.svg";
               <a class="play-this"><TrianglePlayIcon /></a>
             </div>
             <div class="tr-corner">
-              <a class="play-this"><InfoIcon /></a>
+              <a class="info-this"><InfoIcon /></a>
               <a class="favour-this"><HeartIcon/></a>
             </div>
             <div class="bl-corner">
