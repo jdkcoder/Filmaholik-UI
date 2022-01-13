@@ -16,7 +16,6 @@ import InfoIcon from "../../assets/img/info.svg";
       <swiper
         :slidesPerView="'auto'"
         :spaceBetween="10"
-        :freeMode="false"
         :pagination="{
           clickable: true,
         }"
@@ -76,10 +75,10 @@ import InfoIcon from "../../assets/img/info.svg";
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Navigation, FreeMode } from "swiper";
+import SwiperCore, { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-SwiperCore.use([Navigation, FreeMode]);
+SwiperCore.use([Navigation]);
 export default {
   components: {
     Swiper,
