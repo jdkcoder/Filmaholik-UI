@@ -16,9 +16,6 @@ export default {
   },
   methods: {},
   mounted() {
-    function myFunction() {
-      document.getElementById("player").click();
-    }
     let hls = new Hls();
     var art = new Artplayer({
       container: ".artplayer-app",
@@ -30,7 +27,7 @@ export default {
           hls.loadSource(url);
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED, function () {
-            // video.play();
+            video.play();
           });
         },
       },
@@ -74,13 +71,15 @@ export default {
       setting: true,
       playbackRate: true,
       aspectRatio: true,
+      whitelist: ["*"],
       fullscreen: true,
       subtitleOffset: true,
       miniProgressBar: true,
-      mutex: true,
       backdrop: true,
       lang: navigator.language.toLowerCase(),
       moreVideoAttr: {
+        playsInline: true,
+        "webkit-playsinline": true,
         crossOrigin: "anonymous",
       },
     });
@@ -92,5 +91,4 @@ export default {
 .artplayer-app {
   height: 100vh;
 }
-
 </style>
