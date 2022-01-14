@@ -352,6 +352,14 @@ body {
   overflow-x: hidden;
 }
 
+.art-video-player
+.art-bottom
+.art-progress
+.art-control-progress
+.art-control-progress-inner {
+  height: 100% !important;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

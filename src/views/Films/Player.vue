@@ -1,5 +1,6 @@
+
 <template>
-  <div class="artplayer-app"></div>
+  <div class="artplayer-app" id="player"></div>
 </template>
 
 <script>
@@ -15,6 +16,9 @@ export default {
   },
   methods: {},
   mounted() {
+    function myFunction() {
+      document.getElementById("player").click();
+    }
     let hls = new Hls();
     var art = new Artplayer({
       container: ".artplayer-app",
@@ -25,11 +29,14 @@ export default {
         m3u8: function (video, url) {
           hls.loadSource(url);
           hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            // video.play();
+          });
         },
       },
       layers: [
         {
-          html: '<img style="width: 100px" src="/assets/sample/layer.png">',
+          html: '<img style="width: 100px" src="https://artplayer.org/assets/sample/layer.png">',
           click: function () {
             console.info("You clicked on the custom layer");
           },
@@ -62,6 +69,7 @@ export default {
         bilingual: true,
       },
       autoplay: true,
+      muted: false,
       pip: true,
       setting: true,
       playbackRate: true,
@@ -84,4 +92,5 @@ export default {
 .artplayer-app {
   height: 100vh;
 }
+
 </style>
