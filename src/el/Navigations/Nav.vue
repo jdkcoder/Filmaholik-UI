@@ -5,11 +5,15 @@ import mobileNav from "./mobileNav.vue";
 </script>
 
 <template>
-  <mobileNav />
-  <desktopNav />
+  <mobileNav v-if="isPlayer" />
+  <desktopNav v-if="isPlayer" />
 </template>
 <script>
 export default {
-
-}
+  computed: {
+    isPlayer() {
+      return this.$route.name !== "Film Player";
+    },
+  },
+};
 </script>
