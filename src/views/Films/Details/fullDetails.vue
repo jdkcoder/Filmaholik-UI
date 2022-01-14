@@ -8,7 +8,7 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
 <template>
   <section class="short-details">
     <div class="big-wallpaper">
-      <img src="https://i.imgur.com/QmTr4OZ.jpg" class="img-top" />
+      <img src="https://i.imgur.com/hN8lwop.jpg" class="img-top" />
     </div>
     <div class="overlay"></div>
   </section>
