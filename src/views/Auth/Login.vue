@@ -30,6 +30,11 @@
           />
           <label for="login">Mật khẩu</label>
         </div>
+
+        <div class="remember-me">
+          <input class="remember-checkbox" type="checkbox" />
+          Duy trì đăng nhập cho lần tới
+        </div>
         <button class="login-btn" type="submit">Đăng nhập</button>
       </form>
     </div>
@@ -41,5 +46,5 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/styles/child/auth/login';
+@import "../../assets/styles/child/auth/login";
 </style>

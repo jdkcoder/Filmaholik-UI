@@ -38,9 +38,11 @@ section#login {
     a {
       color: rgb(172, 172, 172);
       font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+      transition: all 0.4s;
 
       &:hover {
         color: #eb0000;
+        transition: all 0.4s;
       }
     }
     form {
@@ -84,15 +86,23 @@ section#login {
           transition: all 0.2s ease-in-out;
         }
       }
-    }
+      div.remember-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    button.login-btn {
-      background: #eb0000;
-      color: #fff;
-      text-transform: uppercase;
-      padding: .75rem 1rem;
-      border-radius: 0.25rem;
-      width: 100%;
+        input.remember-checkbox {
+          background: transparent !important;
+        }
+      }
+      button.login-btn {
+        background: #eb0000;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+        width: 100%;
+      }
     }
   }
 }
@@ -110,9 +120,10 @@ section#login {
     width: 600px !important;
     background: rgba(0, 0, 0, 0.7) !important;
     box-shadow: 0px 3px 8px rgba(122, 122, 122, 0.5) !important;
-
-    button.login-btn {
-      width: 60% !important;
+    form {
+      button.login-btn {
+        width: 60% !important;
+      }
     }
   }
 }
