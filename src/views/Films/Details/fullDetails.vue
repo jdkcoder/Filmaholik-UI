@@ -7,10 +7,107 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
 </script>
 <template>
   <section class="short-details">
-    <div class="big-wallpaper">
-      <img src="https://i.imgur.com/hN8lwop.jpg" class="img-top" />
+    <div class="overlay">
+      <div class="short-info-block">
+        <div class="short-info-contents">
+          <img class="title" src="https://i.imgur.com/vmBBWz0.png" alt="The Witcher" />
+          <div class="badges">
+            <p>2019</p>
+            <p class="age-min">18+</p>
+            <p>2 Mùa</p>
+          </div>
+
+          <div class="ratings">
+            <div class="imdb">
+              <img src="https://i.imgur.com/fnIrM8k.png" /><span>6.2 / 10</span>
+            </div>
+            <div class="rotten">
+              <img src="https://i.imgur.com/lk7BRP5.png" /><span>63%</span>
+            </div>
+            <div class="meta">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Metacritic.svg/1024px-Metacritic.svg.png"
+              />
+              <span>6.9</span>
+            </div>
+            <div class="filmaholik">
+              <span><LikeIcon /> <DisLikeIcon /></span>
+              <div class="count">
+                <span class="likes-count">100</span>
+                <span class="dislikes-count">10</span>
+              </div>
+            </div>
+          </div>
+          <div class="btn-short-info">
+            <button class="show-full-info" type="button">
+              <span>Thông tin đầy đủ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="play">
+        <a class="play-trailer"><TrianglePlayIcon /></a>
+      </div>
+      <div class="seasons-parts-top">
+        <div class="seasons-parts-list">
+          <ul>
+            <li class="season active">Mùa 1</li>
+            <li>Mùa 2</li>
+            <li>Mùa 3</li>
+          </ul>
+        </div>
+        <div class="episodes-result">
+          <swiper
+            :direction="'vertical'"
+            :slidesPerView="'auto'"
+            :spaceBetween="10"
+            :pagination="{
+              clickable: true,
+            }"
+            :navigation="false"
+            class="episodes"
+          >
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/2BFyWFi.png" />
+              <div class="ep-overlay">
+                <a class="play-this"><TrianglePlayIcon /></a>
+                <div class="ep-info">
+                  <div>
+                    <div>01</div>
+                    <strong>Khởi đầu của sự kết thúc</strong>
+                  </div>
+                  <span class="duration">1h 1m</span>
+                </div>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/OQiIIhH.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/da5sEMH.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/s0CGjsU.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/aHvsHSm.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/u6ARP0u.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/qHmrLyE.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img class="movie-thumb" src="https://i.imgur.com/8DmzhOU.png" />
+            </swiper-slide>
+          </swiper>
+        </div>
+      </div>
     </div>
-    <div class="overlay"></div>
+    <div class="big-wallpaper">
+      <img src="https://i.imgur.com/aLXNzNH.jpg" class="img-top" />
+    </div>
   </section>
   <section class="full-details">
     <div class="titles">
@@ -42,28 +139,21 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
       <a href="#!" class="report-info-detail">Báo cáo</a>
     </div>
     <div class="synopsis">
-      The Witcher là một serie phim truyền hình chính kịch kỳ ảo được xây dựng
-      dựa trên bộ sách cùng tên của nhà văn người Ba Lan Andrzej Sapkowski. Lấy
-      bối cảnh bên trong thế giới hư cấu thời trung cổ tại một vùng đất được gọi
-      là "Lục địa", The Witcher kể về câu chuyện của những con người mang theo
-      định mệnh gắn liền với nhau, bao gồm chàng thợ săn quái vật cô độc Geralt
-      xứ Rivia, nàng phù thủy Yennefer xứ Vengerberg và công chúa của Cintra,
-      Ciri.
+      The Witcher là một serie phim truyền hình chính kịch kỳ ảo được xây dựng dựa trên bộ
+      sách cùng tên của nhà văn người Ba Lan Andrzej Sapkowski. Lấy bối cảnh bên trong thế
+      giới hư cấu thời trung cổ tại một vùng đất được gọi là "Lục địa", The Witcher kể về
+      câu chuyện của những con người mang theo định mệnh gắn liền với nhau, bao gồm chàng
+      thợ săn quái vật cô độc Geralt xứ Rivia, nàng phù thủy Yennefer xứ Vengerberg và
+      công chúa của Cintra, Ciri.
     </div>
     <div class="casts">
       <div class="casts-title">
         <strong>Diễn viên</strong>
-        <span>
-          Chạm 1 lần - hiển thị vai diễn | 2 lần - thông tin diễn viên
-        </span>
+        <span> Chạm 1 lần - hiển thị vai diễn | 2 lần - thông tin diễn viên </span>
       </div>
       <div class="casts-list">
         <div class="item">
-          <img
-            class="cast-img"
-            src="https://i.imgur.com/2LxKJLX.png"
-            alt="Henry Cavil"
-          />
+          <img class="cast-img" src="https://i.imgur.com/2LxKJLX.png" alt="Henry Cavil" />
           <img
             class="char-img"
             src="https://i.imgur.com/cmwyMfZ.png"
@@ -71,11 +161,7 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
           />
         </div>
         <div class="item">
-          <img
-            class="cast-img"
-            src="https://i.imgur.com/4gQ3G9K.png"
-            alt="Freya Allan"
-          />
+          <img class="cast-img" src="https://i.imgur.com/4gQ3G9K.png" alt="Freya Allan" />
           <img
             class="char-img"
             src="https://i.imgur.com/jgUi9XV.png"
@@ -95,16 +181,8 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
           />
         </div>
         <div class="item">
-          <img
-            class="cast-img"
-            src="https://i.imgur.com/PPcB7iT.png"
-            alt="Joey Batey"
-          />
-          <img
-            class="char-img"
-            src="https://i.imgur.com/JjFqtIW.png"
-            alt="Jaskier"
-          />
+          <img class="cast-img" src="https://i.imgur.com/PPcB7iT.png" alt="Joey Batey" />
+          <img class="char-img" src="https://i.imgur.com/JjFqtIW.png" alt="Jaskier" />
         </div>
       </div>
     </div>
@@ -161,11 +239,9 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
           <img class="movie-thumb" src="https://i.imgur.com/8DmzhOU.png" />
         </swiper-slide>
       </swiper>
-    </div>  
-    <div class="related" style="margin-bottom:10rem;">
-        <strong class="rf-title">
-            Phim cùng thể loại
-        </strong>
+    </div>
+    <div class="related" style="margin-bottom: 10rem">
+      <strong class="rf-title"> Phim cùng thể loại </strong>
     </div>
   </section>
 </template>
@@ -186,5 +262,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

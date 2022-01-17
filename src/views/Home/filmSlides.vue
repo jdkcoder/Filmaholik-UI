@@ -29,7 +29,7 @@ import InfoIcon from "../../assets/img/info.svg";
             </div>
             <div class="tr-corner">
               <a class="info-this"><InfoIcon /></a>
-              <a class="favour-this"><HeartIcon/></a>
+              <a class="favour-this"><HeartIcon /></a>
             </div>
             <div class="bl-corner">
               <img src="https://i.imgur.com/gfin6Rz.png" class="title" />
@@ -98,4 +98,3 @@ section.slides {
   padding-top: 2rem;
 }
 </style>
-

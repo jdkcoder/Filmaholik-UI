@@ -313,7 +313,7 @@ a {
   margin-left: 0.25rem;
 }
 
-.swiper .swiper-slide .hover-el div.bl-corner .short-info .age-restrict {
+.swiper .swiper-slide .hover-el div.bl-corner .short-info p.age-restrict {
   padding: 0.125rem 0.25rem 0 0.25rem;
   border: 1px solid #eb0000;
   border-radius: 1rem;
@@ -321,9 +321,10 @@ a {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  font-size: .5rem;
 }
 
-.swiper .swiper-slide .hover-el div.bl-corner .short-info .age-restrict::after {
+.swiper .swiper-slide .hover-el div.bl-corner .short-info p.age-restrict::after {
   display: none !important;
 }
 
@@ -1452,8 +1453,8 @@ div.title .view-all {
   div.latest .swiper .swiper-slide .hover-el div.bl-corner .short-info > * + * {
     margin-left: 0.5rem;
   }
-  div.latest .swiper .swiper-slide .hover-el div.bl-corner .short-info .age-restrict {
-    padding: 0.125rem 0.75rem 0 0.75rem;
+  div.latest .swiper .swiper-slide .hover-el div.bl-corner .short-info p.age-restrict {
+    padding: 0.125rem 0.5rem 0 0.5rem;
   }
 }
 
@@ -1462,6 +1463,10 @@ div.title .view-all {
 section.short-details {
   width: 100vw;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 section.short-details div.big-wallpaper {
@@ -1478,10 +1483,7 @@ section.short-details div.big-wallpaper img.img-top {
   -webkit-mask-image: linear-gradient(#000 60%, transparent 100%);
   mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #000), to(transparent));
   mask-image: linear-gradient(#000 60%, transparent 100%);
-}
-
-section.short-details div.overlay {
-  display: none;
+  pointer-events: none;
 }
 
 section.full-details {
@@ -1845,6 +1847,299 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
 }
 
 @media (min-width: 1280px) {
+  section.short-details {
+    position: relative;
+  }
+  section.short-details div.overlay {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 6rem 6rem 6rem 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  section.short-details div.overlay div.short-info-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents {
+    padding: 0 4rem 0 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    text-align: center;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents > * + * {
+    margin-top: 1rem;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents img.title {
+    height: 5rem !important;
+    -webkit-filter: drop-shadow(2px 0px 3px #000);
+            filter: drop-shadow(2px 0px 3px #000);
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.badges > * + * {
+    margin-left: 1.5rem;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.badges p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: inline;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.badges p.age-min {
+    border: 2px solid #eb0000 !important;
+    padding: 0.125rem 0.75rem !important;
+    border-radius: 3rem !important;
+    font-size: 1rem !important;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings > * + * {
+    margin-left: 1.5rem;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings img {
+    height: 1.5rem;
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik {
+    display: -ms-grid;
+    display: grid;
+    -webkit-transform: translateY(-11%);
+            transform: translateY(-11%);
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg:nth-child(1):hover {
+    color: #33ff33;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg:nth-child(2):hover {
+    color: red;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik .count {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik .count > * {
+    width: 50%;
+    text-align: center;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik .count .likes-count {
+    color: #33ff33;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik .count .dislikes-count {
+    color: red;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.btn-short-info button.show-full-info {
+    margin-top: 1rem;
+    color: #000;
+    background: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.btn-short-info button.show-full-info:hover {
+    background: #eb0000;
+    color: #fff;
+    -webkit-box-shadow: 1px 1px 10px #eb0000;
+            box-shadow: 1px 1px 10px #eb0000;
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+  section.short-details div.overlay div.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  section.short-details div.overlay div.play a.play-trailer {
+    padding: 3rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+  section.short-details div.overlay div.play a.play-trailer:hover {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 8px #fff, 0px 0px 4px #fff inset;
+            box-shadow: 0px 0px 8px #fff, 0px 0px 4px #fff inset;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  section.short-details div.overlay div.play a.play-trailer:hover > svg {
+    -webkit-filter: drop-shadow(0px 0px 15px #eb0000);
+            filter: drop-shadow(0px 0px 15px #eb0000);
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  section.short-details div.overlay div.play a.play-trailer svg {
+    fill: #eb0000;
+    height: 3rem;
+  }
+  section.short-details div.overlay div.seasons-parts-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 8.5rem;
+  }
+  section.short-details div.overlay div.seasons-parts-top > * + * {
+    margin-left: 2rem;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.seasons-parts-list ul {
+    list-style-type: none;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  section.short-details div.overlay div.seasons-parts-top div.seasons-parts-list ul > * + * {
+    margin-top: 1rem;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.seasons-parts-list ul li.season.active {
+    font-size: 1.5rem;
+    color: #fff;
+    position: relative;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.seasons-parts-list ul li.season.active:before {
+    content: "";
+    border-right: 3px solid red;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(-300%, -60%);
+            transform: translate(-300%, -60%);
+    height: 1rem;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result {
+    height: 100%;
+    width: 300px;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes {
+    height: 700px;
+    overflow: unset !important;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper > * + * {
+    margin-top: unset !important;
+    margin-top: 0.5rem !important;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide {
+    width: unset;
+    height: unset;
+    width: 320px;
+    height: 170px;
+    border-radius: 0.5rem;
+    position: relative;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide:hover {
+    -webkit-transform: unset !important;
+            transform: unset !important;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide img.movie-thumb {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 0.5rem !important;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay:hover {
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay a.play-this {
+    border: 1px solid #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay a.play-this svg {
+    height: 1rem;
+    width: 1rem;
+    fill: red;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay div.ep-info {
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 100;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay div.ep-info > div {
+    text-align: left;
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay div.ep-info > div > strong {
+    font-size: 0.875rem;
+  }
+  section.short-details div.overlay div.seasons-parts-top div.episodes-result .episodes .swiper-wrapper .swiper-slide div.ep-overlay div.ep-info > .duration {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  section.short-details div.big-wallpaper {
+    height: 100vh !important;
+    z-index: -1;
+  }
+  section.full-details {
+    display: none;
+  }
   section.full-details div.casts div.casts-title {
     display: -webkit-box;
     display: -ms-flexbox;
