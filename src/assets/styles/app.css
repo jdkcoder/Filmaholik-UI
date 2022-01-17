@@ -1467,6 +1467,12 @@ section.short-details {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, #000), to(transparent));
+  -webkit-mask-image: linear-gradient(#000 75%, transparent 100%);
+}
+
+section.short-details div.overlay {
+  display: none;
 }
 
 section.short-details div.big-wallpaper {
@@ -1479,10 +1485,6 @@ section.short-details div.big-wallpaper img.img-top {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #000), to(transparent));
-  -webkit-mask-image: linear-gradient(#000 60%, transparent 100%);
-  mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #000), to(transparent));
-  mask-image: linear-gradient(#000 60%, transparent 100%);
   pointer-events: none;
 }
 
@@ -1547,29 +1549,6 @@ section.full-details div.genres a::after {
 
 section.full-details div.genres a:last-child::after {
   display: none !important;
-}
-
-section.full-details div.ratings {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 0.75rem;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-section.full-details div.ratings > * + * {
-  margin-left: 1.5rem;
-}
-
-section.full-details div.ratings img {
-  height: 1.5rem;
-  width: auto;
-  margin-bottom: 0.5rem;
 }
 
 section.full-details div.btn-m {
@@ -1777,31 +1756,6 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
   section.full-details div.genres {
     font-size: clamp(0.75rem, 2vw, 1rem);
   }
-  section.full-details div.ratings {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: clamp(0.75rem, 2vw, 1rem);
-    text-align: center;
-    padding: 1rem 0;
-  }
-  section.full-details div.ratings > div {
-    display: -ms-grid;
-    display: grid;
-    place-items: center;
-  }
-  section.full-details div.ratings > * + * {
-    margin-left: 1.5rem;
-  }
-  section.full-details div.ratings img {
-    height: clamp(1.25rem, 60vw, 2rem);
-    width: auto;
-    margin-bottom: 0.5rem;
-  }
   section.full-details div.synopsis {
     padding: 0 2rem;
   }
@@ -1855,14 +1809,14 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
     z-index: 2;
     width: 100%;
     height: 100%;
-    padding: 6rem 6rem 6rem 4rem;
+    padding: 6rem 4rem 6rem 4rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
   }
   section.short-details div.overlay div.short-info-block {
     display: -webkit-box;
@@ -1913,7 +1867,8 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-size: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
     text-align: center;
     margin-top: 1.5rem;
   }
@@ -1921,26 +1876,37 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
     margin-left: 1.5rem;
   }
   section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings img {
-    height: 1.5rem;
+    height: 1.75rem;
     width: auto;
     margin-bottom: 0.5rem;
   }
   section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik {
     display: -ms-grid;
     display: grid;
-    -webkit-transform: translateY(-11%);
-            transform: translateY(-11%);
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
   }
   section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg {
     height: 2rem;
     width: 2rem;
     cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+  section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg:nth-child(1) {
+    margin-right: 0.5rem;
   }
   section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg:nth-child(1):hover {
     color: #33ff33;
+    fill: #33ff33;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
   section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik svg:nth-child(2):hover {
     color: red;
+    fill: red;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
   section.short-details div.overlay div.short-info-block div.short-info-contents div.ratings .filmaholik .count {
     display: -webkit-box;
@@ -2018,6 +1984,15 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
     display: -ms-flexbox;
     display: flex;
     padding-top: 8.5rem;
+    white-space: nowrap;
+    opacity: 0.7;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  section.short-details div.overlay div.seasons-parts-top:hover {
+    opacity: 1;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
   section.short-details div.overlay div.seasons-parts-top > * + * {
     margin-left: 2rem;
@@ -2136,9 +2111,6 @@ section.full-details div.seasons-parts .swiper .swiper-slide:hover {
   section.short-details div.big-wallpaper {
     height: 100vh !important;
     z-index: -1;
-  }
-  section.full-details {
-    display: none;
   }
   section.full-details div.casts div.casts-title {
     display: -webkit-box;

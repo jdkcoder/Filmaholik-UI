@@ -10,14 +10,20 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
     <div class="overlay">
       <div class="short-info-block">
         <div class="short-info-contents">
-          <img class="title" src="https://i.imgur.com/vmBBWz0.png" alt="The Witcher" />
-          <div class="badges">
+          <img
+            class="title"
+            src="https://i.imgur.com/vmBBWz0.png"
+            alt="The Witcher"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          />
+          <div class="badges" data-aos="fade-right" data-aos-delay="500">
             <p>2019</p>
             <p class="age-min">18+</p>
             <p>2 Mùa</p>
           </div>
 
-          <div class="ratings">
+          <div class="ratings" data-aos="fade-up" data-aos-delay="700">
             <div class="imdb">
               <img src="https://i.imgur.com/fnIrM8k.png" /><span>6.2 / 10</span>
             </div>
@@ -38,25 +44,32 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
               </div>
             </div>
           </div>
-          <div class="btn-short-info">
-            <button class="show-full-info" type="button">
-              <span>Thông tin đầy đủ</span>
+          <div class="btn-short-info"
+              data-aos="fade-zoom-in"
+              data-aos-delay="1000">
+            <button
+              class="show-full-info"
+              type="button"
+              @click="showFullDetail()"
+            >
+              <span v-if="textShow.original">Thông tin đầy đủ</span>
+              <span v-if="textShow.clicked">Thu gọn lại</span>
             </button>
           </div>
         </div>
       </div>
-      <div class="play">
+      <div class="play" data-aos="fade-zoom-in" data-aos-delay="200">
         <a class="play-trailer"><TrianglePlayIcon /></a>
       </div>
       <div class="seasons-parts-top">
-        <div class="seasons-parts-list">
+        <div class="seasons-parts-list" data-aos="fade-left" data-aos-delay="700">
           <ul>
             <li class="season active">Mùa 1</li>
             <li>Mùa 2</li>
             <li>Mùa 3</li>
           </ul>
         </div>
-        <div class="episodes-result">
+        <div class="episodes-result" data-aos="fade-down" data-aos-delay="1000">
           <swiper
             :direction="'vertical'"
             :slidesPerView="'auto'"
@@ -106,54 +119,52 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
       </div>
     </div>
     <div class="big-wallpaper">
-      <img src="https://i.imgur.com/aLXNzNH.jpg" class="img-top" />
+      <img
+        src="https://i.imgur.com/aLXNzNH.jpg"
+        class="img-top"
+        data-aos="fade-zoom-in" data-aos-delay="200"
+      />
     </div>
   </section>
-  <section class="full-details">
-    <div class="titles">
+
+  <section id="full-details" class="full-details" v-if="isShow">
+    <div class="titles" data-aos="zoom-out" data-aos-delay="200">
       <h3 class="translated-name">Thợ săn quái vật</h3>
       <h5 class="original-name">The Witcher</h5>
     </div>
-    <div class="genres">
+    <div class="genres"  data-aos="flip-up" data-aos-delay="400">
       <a href="#!">Thể loại 1</a>
       <a href="#!">Thể loại 2</a>
       <a href="#!">Thể loại 3</a>
     </div>
-    <div class="ratings">
-      <div class="imdb">
-        <img src="https://i.imgur.com/fnIrM8k.png" /><span>6.2 / 10</span>
-      </div>
-      <div class="rotten">
-        <img src="https://i.imgur.com/lk7BRP5.png" /><span>63%</span>
-      </div>
-      <div class="meta">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Metacritic.svg/1024px-Metacritic.svg.png"
-        />
-        <span>6.9</span>
-      </div>
-    </div>
-    <div class="btn-m">
+    <div class="btn-m" data-aos="zoom-out" data-aos-delay="400">
       <a href="#!" class="play-this">Xem ngay</a>
       <a href="#!" class="add-to-list">Thêm vào danh sách</a>
       <a href="#!" class="report-info-detail">Báo cáo</a>
     </div>
-    <div class="synopsis">
-      The Witcher là một serie phim truyền hình chính kịch kỳ ảo được xây dựng dựa trên bộ
-      sách cùng tên của nhà văn người Ba Lan Andrzej Sapkowski. Lấy bối cảnh bên trong thế
-      giới hư cấu thời trung cổ tại một vùng đất được gọi là "Lục địa", The Witcher kể về
-      câu chuyện của những con người mang theo định mệnh gắn liền với nhau, bao gồm chàng
-      thợ săn quái vật cô độc Geralt xứ Rivia, nàng phù thủy Yennefer xứ Vengerberg và
-      công chúa của Cintra, Ciri.
+    <div class="synopsis" data-aos="fade-zoom-in" data-aos-delay="400">
+      The Witcher là một serie phim truyền hình chính kịch kỳ ảo được xây dựng
+      dựa trên bộ sách cùng tên của nhà văn người Ba Lan Andrzej Sapkowski. Lấy
+      bối cảnh bên trong thế giới hư cấu thời trung cổ tại một vùng đất được gọi
+      là "Lục địa", The Witcher kể về câu chuyện của những con người mang theo
+      định mệnh gắn liền với nhau, bao gồm chàng thợ săn quái vật cô độc Geralt
+      xứ Rivia, nàng phù thủy Yennefer xứ Vengerberg và công chúa của Cintra,
+      Ciri.
     </div>
     <div class="casts">
       <div class="casts-title">
-        <strong>Diễn viên</strong>
-        <span> Chạm 1 lần - hiển thị vai diễn | 2 lần - thông tin diễn viên </span>
+        <strong data-aos="fade-right" data-aos-delay="600">Diễn viên</strong>
+        <span data-aos="fade-zoom-in" data-aos-delay="800">
+          Chạm 1 lần - hiển thị vai diễn | 2 lần - thông tin diễn viên
+        </span>
       </div>
-      <div class="casts-list">
+      <div class="casts-list" data-aos="fade-zoom-in" data-aos-delay="900">
         <div class="item">
-          <img class="cast-img" src="https://i.imgur.com/2LxKJLX.png" alt="Henry Cavil" />
+          <img
+            class="cast-img"
+            src="https://i.imgur.com/2LxKJLX.png"
+            alt="Henry Cavil"
+          />
           <img
             class="char-img"
             src="https://i.imgur.com/cmwyMfZ.png"
@@ -161,7 +172,11 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
           />
         </div>
         <div class="item">
-          <img class="cast-img" src="https://i.imgur.com/4gQ3G9K.png" alt="Freya Allan" />
+          <img
+            class="cast-img"
+            src="https://i.imgur.com/4gQ3G9K.png"
+            alt="Freya Allan"
+          />
           <img
             class="char-img"
             src="https://i.imgur.com/jgUi9XV.png"
@@ -181,13 +196,21 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
           />
         </div>
         <div class="item">
-          <img class="cast-img" src="https://i.imgur.com/PPcB7iT.png" alt="Joey Batey" />
-          <img class="char-img" src="https://i.imgur.com/JjFqtIW.png" alt="Jaskier" />
+          <img
+            class="cast-img"
+            src="https://i.imgur.com/PPcB7iT.png"
+            alt="Joey Batey"
+          />
+          <img
+            class="char-img"
+            src="https://i.imgur.com/JjFqtIW.png"
+            alt="Jaskier"
+          />
         </div>
       </div>
     </div>
     <div class="seasons-parts">
-      <div class="sp-title">
+      <div class="sp-title" data-aos="fade-up" data-aos-delay="1000">
         <strong>Danh sách tập</strong>
         <select>
           <option>Mùa 1</option>
@@ -201,6 +224,7 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
           clickable: true,
         }"
         :navigation="true"
+        data-aos="fade-zoom-in" data-aos-delay="1200"
       >
         <swiper-slide>
           <img class="movie-thumb" src="https://i.imgur.com/2BFyWFi.png" />
@@ -241,7 +265,7 @@ import DisLikeIcon from "../../../assets/img/dislike.svg";
       </swiper>
     </div>
     <div class="related" style="margin-bottom: 10rem">
-      <strong class="rf-title"> Phim cùng thể loại </strong>
+      <strong class="rf-title" data-aos="fade-right" data-aos-delay="1300"> Phim cùng thể loại </strong>
     </div>
   </section>
 </template>
@@ -251,15 +275,47 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation } from "swiper";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 SwiperCore.use([Navigation]);
 
+AOS.init();
 export default {
   components: {
     Swiper,
     SwiperSlide,
   },
+  data() {
+    return {
+      textShow: {
+        clicked: false,
+        original: true,
+      },
+      isShow: false,
+    };
+  },
+  methods: {
+    showFullDetail() {
+      this.isShow = !this.isShow;
+      this.textShow.clicked = !this.textShow.clicked;
+      this.textShow.original = !this.textShow.original;
+      setTimeout(() => {
+        var element = document.getElementById("full-details");
+        var headerOffset = 2;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 200);
+    },
+    mounted() {},
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
