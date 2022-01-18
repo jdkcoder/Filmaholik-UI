@@ -72,8 +72,8 @@
           data-aos-delay="900"
           data-aos-offset="-200"
         >
-          <input class="remember-checkbox" type="checkbox" />
-          Duy trì đăng nhập cho lần tới
+          <input id="remember-me" class="remember-checkbox" type="checkbox" />
+          Duy trì đăng nhập trong vòng 7 ngày tới
         </div>
         <button
           class="login-btn"
@@ -100,17 +100,53 @@ export default {
   methods: {
     async login() {
       await axios
-        .post(`/auth/login/`, {
+        .post(`/auth/login`, {
           username: this.username,
           password: this.password,
         })
         .then((res) => {
-          console.log(res.data);
+          let data = res.data;
+          console.log(data);
+
+          let jwt = data.accessToken;
+
+          /* Kiểm tra remember-me*/
+          let remember = document.getElementById("remember-me");
+          if (remember.checked == true) {
+            console.log("Đã chọn không cần re-login trong vòng 7 ngày tới");
+            document.cookie = `JWT=${jwt}; max-age=604800; path=/`; //re-login sau 7 ngày - Đã chọn remember-me
+          } else {
+            document.cookie = `JWT=${jwt}; max-age=172800; path=/`; //re-login sau 3 ngày - Mặc định
+            console.log("Mặc định, re-login trong vòng 3 ngày tới");
+          }
+          /* END Kiểm tra remember-me*/
+
+          /* Chuyển hướng theo status login */
+          if (
+            jwt === data.accessToken &&
+            jwt.length === 213 &&
+            document.cookie.length === 217
+          ) {
+            window.location.replace("/"); //nếu login thành công
+          } else {
+            alert("Đăng nhập thất bại, hãy thử lại!"); //nếu login thất bại
+          }
+          /* END Chuyển hướng theo status login */
         })
         .catch((err) => {
           console.log(err);
         });
     },
+  },
+  mounted() {
+    if (document.cookie.length === 217) {
+      alert("Đăng nhập rồi còn gì nữa?");
+      this.$router.push("/");
+    } else if (document.cookie !== 217) {
+      alert("Đăng nhập đê");
+    } else {
+      return false;
+    }
   },
 };
 </script>
