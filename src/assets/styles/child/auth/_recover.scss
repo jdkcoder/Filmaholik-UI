@@ -1,0 +1,134 @@
+section#recovery {
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    position: relative;
+  
+    img.bg-recovery {
+      position: relative;
+      pointer-events: none;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(40%);
+    }
+  
+    div#recovery-form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(34, 34, 34, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 4rem;
+  
+      div.top-field {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: 300;
+      }
+      h2.recovery-title {
+        text-transform: uppercase;
+        margin: 1.5rem 0 2rem 0;
+      }
+      a {
+        color: rgb(172, 172, 172);
+        font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+        transition: all 0.4s;
+  
+        &:hover {
+          color: #eb0000;
+          transition: all 0.4s;
+        }
+      }
+      form {
+        width: 100%;
+        & > * + * {
+          margin-top: 1rem;
+        }
+        div.input-group {
+          position: relative;
+          margin-bottom: 1rem;
+  
+          input {
+            color: #fff;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #fff;
+            padding: 0.25rem 0.5rem;
+            width: 100%;
+  
+            &:focus {
+              border-bottom: 1px solid #ff5454;
+              color: #ff5454;
+            }
+            &:not(:placeholder-shown) + label,
+            &:focus + label {
+              transform: translate(-5%, -140%);
+              font-size: 0.8rem;
+              transition: all 0.2s ease-in-out;
+            }
+            &:focus + label {
+              color: #ff5454;
+            }
+          }
+  
+          label {
+            position: absolute;
+            left: 0.25rem;
+            bottom: 0.25rem;
+            color: grey;
+            pointer-events: none;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+      button.recovery-btn {
+        background: #eb0000;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+        width: 100%;
+        margin-bottom:1rem;
+      }
+      small {
+          font-size:.85rem;
+      }
+    }
+  }
+  
+  @media (min-width: 601px) {
+    section#recovery {
+      img.bg-recovery {
+        filter: brightness(70%);
+      }
+      div#recovery-form {
+        padding: 2rem 4rem;
+        width: 80%;
+        height: max-content;
+        box-shadow: 0px 3px 8px rgba(122, 122, 122, 0.5);
+        border-radius: 0.5rem;
+      }
+    }
+  }
+  @media (min-width: 1280px) {
+    section#recovery {
+      div#recovery-form {
+        width: 700px;
+        form {
+          button.login-btn {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+  

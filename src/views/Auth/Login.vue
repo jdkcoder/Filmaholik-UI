@@ -23,12 +23,13 @@
         </div>
         <div class="input-group">
           <input
+            id="password"
             type="password"
             name="password"
             placeholder=" "
             autocomplete="off"
           />
-          <label for="login">Mật khẩu</label>
+          <label for="password">Mật khẩu</label>
         </div>
 
         <div class="remember-me">

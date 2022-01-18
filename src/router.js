@@ -27,7 +27,7 @@ const routes = [
     name: "Login",
   },
   {
-    path: "/recovery",
+    path: "/recover",
     component: Recover,
     name: "Recover",
   },
