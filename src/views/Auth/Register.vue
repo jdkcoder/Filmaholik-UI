@@ -1,5 +1,5 @@
 <template>
-  <section id="register">
+  <section id="register" data-aos-delay="300">
     <picture data-aos="fade">
       <source srcset="https://i.imgur.com/IQBlSLe.jpg" media="(min-width: 600px)" />
       <source
