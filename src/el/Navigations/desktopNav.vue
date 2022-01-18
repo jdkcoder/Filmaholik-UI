@@ -19,7 +19,7 @@ import SearchIcon from "../../assets/img/search.svg";
         </li>
       </ul>
     </div>
-    <div class="right-corner">
+    <div class="right-corner" v-if="!isHidden">
       <button type="button" class="upgrade"><ZapIcon /> <span>VIP PREMIUM</span></button>
       <button type="button" class="search">
         <SearchIcon />
@@ -30,7 +30,7 @@ import SearchIcon from "../../assets/img/search.svg";
         <div class="avt"></div>
       </div> 
       -->
-      <div v-if="!isHidden">
+      <div>
         <router-link to="/login">
           <span>Đăng nhập</span>
         </router-link>
