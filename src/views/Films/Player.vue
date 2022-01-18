@@ -1,4 +1,3 @@
-
 <template>
   <div class="artplayer-app" id="player"></div>
 </template>
@@ -21,7 +20,7 @@ export default {
       container: ".artplayer-app",
       theme: "#eb0000",
       poster: "https://i.ytimg.com/vi/aqz-KE-bpKQ/maxresdefault.jpg",
-      url: "https://demo-movies.s3.us-west-002.backblazeb2.com/demo.m3u8",
+      url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
       customType: {
         m3u8: function (video, url) {
           hls.loadSource(url);
@@ -31,20 +30,21 @@ export default {
           });
         },
       },
-      layers: [
-        {
-          html: '<img style="width: 100px" src="https://artplayer.org/assets/sample/layer.png">',
-          click: function () {
-            console.info("You clicked on the custom layer");
-          },
-          style: {
-            position: "absolute",
-            top: "20px",
-            right: "20px",
-            opacity: ".9",
-          },
-        },
-      ],
+      // layers: [
+      //   {
+      //     html:
+      //       '<img style="width: 100px" src="https://artplayer.org/assets/sample/layer.png">',
+      //     click: function () {
+      //       console.info("You clicked on the custom layer");
+      //     },
+      //     style: {
+      //       position: "absolute",
+      //       top: "20px",
+      //       right: "20px",
+      //       opacity: ".9",
+      //     },
+      //   },
+      // ],
       // quality: [
       //   {
       //     default: true,
