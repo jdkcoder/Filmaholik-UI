@@ -48,7 +48,7 @@ picture {
 }
 
 section {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 a {

@@ -3,7 +3,7 @@ import ZapIcon from "../../assets/img/zap.svg";
 import SearchIcon from "../../assets/img/search.svg";
 </script>
 <template>
-  <div class="desktop-nav" :class="{scrolling: scrollPosition > 80}">
+  <div class="desktop-nav" :class="{ scrolling: scrollPosition > 80 }">
     <div class="left-corner">
       <span class="logo"> LOGO HERE </span>
       <ul>
@@ -20,9 +20,7 @@ import SearchIcon from "../../assets/img/search.svg";
       </ul>
     </div>
     <div class="right-corner">
-      <button type="button" class="upgrade">
-        <ZapIcon /> <span>VIP PREMIUM</span>
-      </button>
+      <button type="button" class="upgrade"><ZapIcon /> <span>VIP PREMIUM</span></button>
       <button type="button" class="search">
         <SearchIcon />
       </button>
@@ -32,13 +30,13 @@ import SearchIcon from "../../assets/img/search.svg";
         <div class="avt"></div>
       </div> 
       -->
-      <div>
+      <div v-if="!isHidden">
         <router-link to="/login">
-        <span>Đăng nhập</span>
+          <span>Đăng nhập</span>
         </router-link>
         /
         <router-link to="/register">
-        <span>Đăng ký</span>
+          <span>Đăng ký</span>
         </router-link>
       </div>
     </div>
@@ -50,19 +48,30 @@ export default {
   name: "Desktop Navigation",
   data() {
     return {
-      scrollPosition: null
-    }
+      scrollPosition: null,
+      isHidden: true,
+    };
   },
   methods: {
     updateScroll() {
-       this.scrollPosition = window.scrollY
-    }
-},
-mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-}
+      this.scrollPosition = window.scrollY;
+    },
+  },
+  watch: {
+    $route() {
+      if (
+        this.$route.name === "Login" ||
+        this.$route.name === "Register" ||
+        this.$route.name === "Recover"
+      ) {
+        this.isHidden = true;
+      } else {
+        this.isHidden = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
 };
 </script>
-
-<style>
-</style>

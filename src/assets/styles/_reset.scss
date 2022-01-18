@@ -38,10 +38,10 @@ picture {
   border: none;
 }
 section {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 a {
-  text-decoration:none;
+  text-decoration: none;
 }
 /* remove animation for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
