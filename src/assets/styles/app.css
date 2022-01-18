@@ -350,7 +350,7 @@ body {
   font-family: "Nunito", sans-serif;
   background: #141414;
   color: white;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .art-video-player

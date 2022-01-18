@@ -6,7 +6,7 @@ body {
   font-family: "Nunito", sans-serif;
   background: $body-bg-clr;
   color: $body-text-clr;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 .art-video-player
   .art-bottom
