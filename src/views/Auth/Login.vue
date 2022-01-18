@@ -32,7 +32,7 @@
       >
         đăng nhập
       </h2>
-      <form>
+      <form @submit.prevent="login">
         <div
           class="input-group"
           data-aos="fade"
@@ -43,6 +43,7 @@
             id="login"
             type="login"
             name="username"
+            v-model="username"
             placeholder=" "
             autocomplete="off"
           />
@@ -59,6 +60,7 @@
             type="password"
             name="password"
             placeholder=" "
+            v-model="password"
             autocomplete="off"
           />
           <label for="password">Mật khẩu</label>
@@ -88,7 +90,29 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  name: "Login",
+  data() {
+    return { username: "", password: "" };
+  },
+  methods: {
+    async login() {
+      await axios
+        .post(`/auth/login/`, {
+          username: this.username,
+          password: this.password,
+        })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
