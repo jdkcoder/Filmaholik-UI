@@ -1,6 +1,6 @@
 <template>
   <section id="recovery">
-    <picture data-aos="fade" data-aos-delay="300">
+    <picture data-aos="fade" data-aos-delay="300" data-aos-offset="-200">
       <source srcset="https://i.imgur.com/fnZXUrl.png" media="(min-width: 600px)" />
       <source srcset="https://i.ytimg.com/vi/WPbVuNKF8qw/maxresdefault.jpg" />
       <img

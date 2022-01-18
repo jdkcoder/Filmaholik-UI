@@ -5,6 +5,7 @@
       class="bg-login"
       data-aos="fade"
       data-aos-delay="400"
+      data-aos-offset="-200"
     />
     <div id="login-form" data-aos="fade" data-aos-delay="200">
       <div class="top-field">
