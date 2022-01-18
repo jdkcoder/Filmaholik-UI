@@ -1,6 +1,6 @@
 <template>
-  <section id="register" data-aos-delay="300">
-    <picture data-aos="fade">
+  <section id="register">
+    <picture data-aos="fade" data-aos-delay="300">
       <source srcset="https://i.imgur.com/IQBlSLe.jpg" media="(min-width: 600px)" />
       <source
         srcset="https://images.hdqwalls.com/download/iron-man-mask-4k-8n-320x568.jpg"

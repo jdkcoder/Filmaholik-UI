@@ -4,7 +4,7 @@
       src="https://cdn.wallpapersafari.com/54/67/yXjDHE.jpg"
       class="bg-login"
       data-aos="fade"
-      data-aos-delay="300"
+      data-aos-delay="400"
     />
     <div id="login-form" data-aos="fade" data-aos-delay="200">
       <div class="top-field">
