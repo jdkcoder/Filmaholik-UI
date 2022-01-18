@@ -114,9 +114,9 @@ export default {
           let remember = document.getElementById("remember-me");
           if (remember.checked == true) {
             console.log("Đã chọn không cần re-login trong vòng 7 ngày tới");
-            document.cookie = `JWT=${jwt}; max-age=604800; path=/`; //re-login sau 7 ngày - Đã chọn remember-me
+            document.cookie = `JWT=${jwt}; max-age=604800`; //re-login sau 7 ngày - Đã chọn remember-me
           } else {
-            document.cookie = `JWT=${jwt}; max-age=172800; path=/`; //re-login sau 3 ngày - Mặc định
+            document.cookie = `JWT=${jwt}; max-age=172800`; //re-login sau 3 ngày - Mặc định
             console.log("Mặc định, re-login trong vòng 3 ngày tới");
           }
           /* END Kiểm tra remember-me*/
@@ -127,7 +127,7 @@ export default {
             jwt.length === 213 &&
             document.cookie.length === 217
           ) {
-            window.location.replace("/"); //nếu login thành công
+            this.$router.push("/"); //nếu login thành công
           } else {
             alert("Đăng nhập thất bại, hãy thử lại!"); //nếu login thất bại
           }
@@ -139,6 +139,7 @@ export default {
     },
   },
   mounted() {
+    /* Require login or not */
     if (document.cookie.length === 217) {
       alert("Đăng nhập rồi còn gì nữa?");
       this.$router.push("/");
@@ -147,6 +148,7 @@ export default {
     } else {
       return false;
     }
+    /* END REQUIRE LOGIN */
   },
 };
 </script>

@@ -13,7 +13,7 @@ import SearchIcon from "../../assets/img/search.svg";
           </router-link>
         </li>
         <li>
-          <router-link to="/films" class="item">
+          <router-link to="/" class="item">
             <span>Phim mới</span>
           </router-link>
         </li>

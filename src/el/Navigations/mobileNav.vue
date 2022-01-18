@@ -11,19 +11,19 @@ import HamburgerIcon from "../../assets/img/hamburger.svg";
       <HomeIcon />
       <span>Trang chủ</span>
     </router-link>
-    <router-link to="/films" class="item">
+    <router-link to="/" class="item">
       <FilmIcon />
       <span>Phim mới</span>
     </router-link>
-    <router-link to="/account" class="item">
+    <router-link to="/" class="item">
       <SingleUserIcon />
       <span>Tài khoản</span>
     </router-link>
-    <router-link to="/search" class="item">
+    <router-link to="/" class="item">
       <SearchIcon />
       <span>Tìm kiếm</span>
     </router-link>
-    <router-link to="/more" class="item more">
+    <router-link to="/" class="item more">
       <HamburgerIcon />
       <span>Thêm</span>
     </router-link>
