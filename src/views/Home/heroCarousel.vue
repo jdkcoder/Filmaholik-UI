@@ -10,7 +10,7 @@ import InfoIcon from "../../assets/img/info.svg";
 
 <template>
   <section class="hero-banner">
-    <picture>
+    <picture data-aos="fade-zoom-in">
       <source
         srcset="https://i.imgur.com/UExK2s7.jpg"
         media="(min-width: 600px)"
@@ -31,10 +31,12 @@ import InfoIcon from "../../assets/img/info.svg";
       <PlayIcon />
     </div>
 
-    <div class="blocks">
-      <div class="item title">
-        <span>Spider-man 3</span>
-        <div class="streaming" v-if="!isMobile()"> <span>streaming</span> <FilmIcon /></div>
+    <div class="blocks" data-aos="fade-zoom-in" data-aos-delay="500">
+      <div class="item title" data-aos="fade-right" data-aos-delay="600">
+        <span data-aos="fade-right" data-aos-delay="600">Spider-man 3</span>
+        <div class="streaming" v-if="!isMobile()">
+          <div><span>streaming</span>  <FilmIcon /></div>
+        </div>
       </div>
       <div class="genres-m" v-if="isMobile()">
         <span>Hành động</span>
@@ -56,23 +58,20 @@ import InfoIcon from "../../assets/img/info.svg";
           <p>Thông tin</p>
         </div>
       </div>
-      <div class="item trailer">
+      <div class="item trailer" data-aos="zoom-in" data-aos-delay="600">
         <a href="#!" class="play-trailer">
           <img src="https://i.imgur.com/rlGJ4h8.png" alt="" />
         </a>
-        <img
-          src="https://i.imgur.com/5HvWl2I.png"
-          class="trailer-thumb"
-        />
+        <img src="https://i.imgur.com/5HvWl2I.png" class="trailer-thumb" />
       </div>
-      <div class="item genres">
+      <div class="item genres" data-aos="fade-zoom-in" data-aos-delay="800">
         <div>
           <span>Thể loại:</span>
           <p><a>Hành động</a>, <a>Viễn tưởng</a>, <a>Siêu anh hùng</a></p>
           <a href="#!" class="more-ifo"><small>Xem thông tin phim >></small></a>
         </div>
       </div>
-      <div class="item ratings">
+      <div class="item ratings" data-aos="fade-zoom-in" data-aos-delay="1000">
         <div class="filmaholik">
           <span><LikeIcon /> <DisLikeIcon /></span>
           <div class="count">
@@ -120,4 +119,5 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../assets/styles/child/home/heroCarousel";
 </style>

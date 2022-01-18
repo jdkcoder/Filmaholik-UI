@@ -286,12 +286,9 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 SwiperCore.use([Navigation]);
 
-AOS.init();
 
 var check = false;
 export default {

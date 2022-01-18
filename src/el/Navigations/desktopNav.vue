@@ -26,9 +26,20 @@ import SearchIcon from "../../assets/img/search.svg";
       <button type="button" class="search">
         <SearchIcon />
       </button>
-      <div class="user-corner">
+      <!-- 
+        <div class="user-corner">
         <span class="username">Joker Dark Knight</span>
         <div class="avt"></div>
+      </div> 
+      -->
+      <div>
+        <router-link to="/login">
+        <span>Đăng nhập</span>
+        </router-link>
+        /
+        <router-link to="/register">
+        <span>Đăng ký</span>
+        </router-link>
       </div>
     </div>
   </div>

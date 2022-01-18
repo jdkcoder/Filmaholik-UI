@@ -1,12 +1,8 @@
 <script setup>
-import Navigations from './el/Navigations/Nav.vue'
-
+import Navigations from "./el/Navigations/Nav.vue";
 </script>
 
 <template>
-<Navigations />
- <router-view />
+  <Navigations />
+  <router-view />
 </template>
-
-<script>
-</script>

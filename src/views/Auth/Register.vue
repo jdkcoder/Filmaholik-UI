@@ -1,6 +1,6 @@
 <template>
   <section id="register">
-    <picture>
+    <picture data-aos="fade-zoom-in">
       <source
         srcset="https://i.imgur.com/IQBlSLe.jpg"
         media="(min-width: 600px)"
@@ -18,14 +18,14 @@
       />
     </picture>
 
-    <div id="register-form">
+    <div id="register-form" data-aos="fade" data-aos-delay="200">
       <div class="top-field">
-        <a href="#!">Đăng nhập</a>
-        <a href="#!">Quên mật khẩu</a>
+        <a href="#!" data-aos="fade-right" data-aos-delay="500">Đăng nhập</a>
+        <a href="#!" data-aos="fade-left" data-aos-delay="500">Quên mật khẩu</a>
       </div>
-      <h2 class="register-title">Đăng ký</h2>
+      <h2 class="register-title" data-aos="flip-up" data-aos-delay="500">Đăng ký</h2>
       <form>
-        <div class="input-group">
+        <div class="input-group" data-aos="fade" data-aos-delay="600">
           <input
             id="username"
             type="username"
@@ -35,7 +35,7 @@
           />
           <label for="username">Tên người dùng</label>
         </div>
-        <div class="input-group">
+        <div class="input-group" data-aos="fade" data-aos-delay="700">
           <input
             id="email"
             type="email"
@@ -45,7 +45,7 @@
           />
           <label for="email">Địa chỉ email</label>
         </div>
-        <div class="input-group">
+        <div class="input-group" data-aos="fade" data-aos-delay="800">
           <input
             id="password"
             type="password"
@@ -55,7 +55,7 @@
           />
           <label for="password">Mật khẩu</label>
         </div>
-        <div class="input-group">
+        <div class="input-group" data-aos="fade" data-aos-delay="1000">
           <input
             id="confirmPassword"
             type="password"

@@ -7,7 +7,7 @@ import InfoIcon from "../../assets/img/info.svg";
 <template>
   <section class="slides">
     <div class="latest">
-      <div class="title">
+      <div class="title" data-aos="fade-right" data-aos-delay="200">
         <h2>Phim mới cập nhật</h2>
         <div class="view-all">
           <p><span>Xem tất cả</span> <SingleArrowRight /></p>
@@ -19,13 +19,13 @@ import InfoIcon from "../../assets/img/info.svg";
         :pagination="{
           clickable: true,
         }"
-        :navigation="true"
+        :navigation="true" data-aos="fade-zoom-in" data-aos-delay="600"
       >
         <swiper-slide>
           <img class="movie-thumb" src="https://i.imgur.com/2kYvx0N.png" />
           <div class="hover-el">
             <div class="tl-corner">
-              <a class="play-this"><TrianglePlayIcon /></a>
+              <router-link to="/film" class="play-this"><TrianglePlayIcon /></router-link>
             </div>
             <div class="tr-corner">
               <a class="info-this"><InfoIcon /></a>
@@ -92,6 +92,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "../../assets/styles/child/home/slides/latest";
 section.slides {
   height: 100vh;
   width: 100vw;
