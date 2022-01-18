@@ -12,7 +12,7 @@
     <div id="recovery-form" data-aos="fade" data-aos-delay="200" data-aos-offset="-200">
       <div class="top-field">
         <router-link
-          to="/login"
+          to="/register"
           data-aos="fade-right"
           data-aos-delay="500"
           data-aos-offset="-200"
@@ -20,7 +20,7 @@
           Đăng ký
         </router-link>
         <router-link
-          to="/register"
+          to="/login"
           data-aos="fade-right"
           data-aos-delay="500"
           data-aos-offset="-200"
