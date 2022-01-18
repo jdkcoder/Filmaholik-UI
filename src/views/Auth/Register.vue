@@ -103,7 +103,7 @@
           type="submit"
           data-aos="zoom-in"
           data-aos-delay="1000"
-          data-aos-offset="-200"
+          data-aos-offset="-300"
         >
           Đăng ký
         </button>
